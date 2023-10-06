@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Eligibility Check</title>
+    <style>
+    body {
+        font-family: 'Times New Roman', sans-serif;
+        background-color: #f4f4f4;
+        text-align: center;
+        margin: 20px;
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    label {
+        font-weight: bold;
+        margin-top: 20px;
+        display: block;
+    }
+
+    input {
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    p {
+        font-size: 18px;
+        margin-top: 20px;
+        color: #333;
+    }
+</style>
+    <script>
+        // JavaScript function
+        function checkVotingEligibility(age) {
+            if (age >= 18) {
+                return "You are eligible to vote!";
+            } else {
+                return "Sorry, you are not eligible to vote yet.";
+            }
+        }
+
+        // Function call and output display
+        function displayResult() {
+            var ageInput = document.getElementById("ageInput").value;
+            var result = checkVotingEligibility(ageInput);
+            document.getElementById("resultOutput").innerHTML = result;
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Voting Eligibility Checker</h1>
+
+    <label for="ageInput">Enter your age:</label>
+    <input type="number" id="ageInput" placeholder="Enter your age">
+
+    <button onclick="displayResult()">Check Eligibility</button>
+
+    <p id="resultOutput"></p>
+
+</body>
+</html>
